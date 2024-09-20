@@ -1,0 +1,160 @@
+/* src/components/HomePage.css */
+.homepage {
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+  align-items: center; /* Center horizontally */
+  height: 100vh; /* Full height of viewport */
+  background-color: #f0f0f0; /* Light gray background */
+  padding-top: 20px; /* Add top padding for space */
+  overflow: hidden; /* Prevent vertical scrolling */
+}
+
+/* src/components/HomePage.css */
+.welcome-card {
+  width: 100%; /* Full width */
+  max-width: 1500px; /* Max width for the card */
+  margin: 20px auto; /* Center the card */
+  padding: 20px; /* Padding inside the card */
+  background-color: #0ab2eb; /* Background color */
+  border-radius: 20px; /* Rounded corners */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+  text-align: center; /* Center text */
+  overflow: hidden;
+}
+
+
+.welcome-message {
+  text-align: center;
+  font-size: 1.5em; /* Adjust font size */
+  color: #155724; /* Color that fits your theme */
+  margin-bottom: 30px; /* Space between message and cards */
+  padding: 0 20px; /* Padding for smaller screens */
+  white-space: nowrap;
+}
+
+.card-container {
+  display: flex; /* Use flexbox for horizontal layout */
+  justify-content: flex-start; /* Align cards to the start */
+  width: 100%; /* Full width */
+  overflow-x: auto; /* Enable horizontal scrolling */
+  overflow-y: hidden; /* Hide vertical overflow */
+  scroll-behavior: smooth; /* Smooth scrolling */
+  padding: 0 10px; /* Optional: add horizontal padding */
+  margin-top: 50px; /* Space above cards */
+}
+
+.card {
+  width: 450px; /* Fixed width */
+  height: 450px; /* Fixed height */
+  margin: 0 20px; /* Space between cards */
+  border-radius:80px; /* Rounded corners */
+  transition: transform 0.6s; /* Smooth transition for transformations */
+  position: relative; /* For inner card positioning */
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  border-radius: 80px; /* Consistent radius */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  transform-style: preserve-3d; /* Maintain 3D effect */
+  transition: transform 0.6s; /* Smooth rotation */
+}
+
+.card:hover .card-inner {
+  transform: rotateY(180deg); /* Rotate on hover */
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden; /* Hide back face when front is visible */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center; /* Center text */
+}
+
+.card-front {
+  padding: 15px; /* Adjusted padding for content */
+  display: flex;
+  flex-direction: column; /* Stack elements vertically */
+  justify-content: center; /* Center elements vertically */
+}
+
+.card-back {
+  transform: rotateY(180deg); /* Position back face */
+  padding: 20px; /* Padding for content */
+}
+
+.view-button {
+  margin-top: 15px; /* Space above the button */
+  padding: 10px 20px; /* Button padding */
+  background-color: #155724; /* Button color */
+  color: white; /* Text color */
+  border: none; /* No border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor */
+  transition: background-color 0.3s; /* Smooth background color change */
+}
+
+.view-button:hover {
+  background-color: #0d3e0d; /* Darker green on hover */
+}
+
+/* Optional: Custom scrollbar styles */
+.card-container::-webkit-scrollbar {
+  height: 8px; /* Height of the scrollbar */
+}
+
+.card-container::-webkit-scrollbar-thumb {
+  background: #888; /* Scrollbar color */
+  border-radius: 10px; /* Rounded scrollbar */
+}
+
+.card-container::-webkit-scrollbar-track {
+  background: #f0f0f0; /* Track color */
+}
+
+
+/* src/components/HomePage.css */
+.goodbye-card {
+  background-color: #f9f9f9; /* Light background color */
+  border: 1px solid #6173c4; /* Border for the card */
+  border-radius: 15px; /* Rounded corners */
+  padding: 20px; /* Padding inside the card */
+  max-width: 800px; /* Max width for the card */
+  margin: 40px auto; /* Center the card and add margin */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.goodbye-message {
+  font-size: 1.2em; /* Font size */
+  color: #155724; /* Color that fits your theme */
+  text-align: center; /* Center the text */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .welcome-message {
+    font-size: 1.2em; /* Smaller font size for tablets */
+    margin-bottom: 20px; /* Adjust spacing */
+  }
+}
+
+@media (max-width: 480px) {
+  .welcome-message {
+    font-size: 1em; /* Even smaller font size for mobile */
+    margin-bottom: 15px; /* Adjust spacing */
+  }
+}
+
+.name {
+  font-size: 2em; /* Larger font size for your name */
+  color: #007bff; /* A blue color for contrast */
+  text-align: center; /* Center the name */
+  margin-top: 10px; /* Space above the name */
+  font-weight: bold; /* Make it bold */
+}
